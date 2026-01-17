@@ -6,50 +6,124 @@
     --grey-900: hsl(0, 0%, 8%);
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-size: 14px;
     font-family: 'Inter', sans-serif;
     color: var(--white);
-    padding: 0;
-    margin: 0;
-    margin-top: 15%;
-    margin-bottom: 15%;
-    margin-left: 15%;
-    margin-right: 15%;
-    box-sizing: border-box;
     background-color: var(--grey-900);
-}
-
-.location {
-    color: var(--green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    background-color: var(--grey-800);
+    border-radius: 12px;
+    padding: 2.5rem;
+    /* ~40px */
     width: 100%;
-
-    margin-top: 15%;
+    max-width: 384px;
+    /* Mobile design width usually, or slightly larger */
+    text-align: center;
 }
 
 .profile-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.profile-card img {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+}
+
+.name {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.location {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--green);
+    margin-bottom: 1.5rem;
+}
+
+.job {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
     width: 100%;
 }
 
-.card-links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.social-link {
+    display: block;
+    background-color: var(--grey-700);
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: background-color 0.2s, color 0.2s;
     width: 100%;
-    margin-top: 15%;
-    margin-bottom: 15%;
-    margin-left: 15%;
-    margin-right: 15%;
+}
+
+.social-link:hover {
+    background-color: var(--green);
+    color: var(--grey-900);
+}
+
+.attribution {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    max-width: fit-content;
+    text-align: center;
+    font-size: 11px;
+    color: var(--white);
+}
+
+.attribution a {
+    color: var(--green);
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: 100%;
+    }
+
+    .attribution {
+        margin: 5px;
+        position: static;
+        width: 100%;
+        max-width: fit-content;
+        text-align: center;
+        font-size: 11px;
+        color: var(--white);
+    }
 }
